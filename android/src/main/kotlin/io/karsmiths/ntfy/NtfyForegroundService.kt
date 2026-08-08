@@ -68,7 +68,7 @@ class NtfyForegroundService : Service() {
         if (isServiceStarted) return
         isServiceStarted = true
 
-        val notification = createServiceNotification("Listening for notifications on $topic")
+        val notification = createServiceNotification("سرویس اعلان بهامد")
         startForeground(NOTIFICATION_SERVICE_ID, notification)
 
         wakeLock = (getSystemService(Context.POWER_SERVICE) as PowerManager).run {
@@ -246,7 +246,7 @@ class NtfyForegroundService : Service() {
         }
 
         return NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
-            .setContentTitle("سرویس اعلان بهامد")
+            .setContentTitle("بهامد")
             .setContentText(text)
             .setSmallIcon(android.R.drawable.ic_dialog_info)
             .setContentIntent(pendingIntent)
