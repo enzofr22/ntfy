@@ -48,7 +48,7 @@ class NtfyForegroundService : Service() {
         if (intent != null) {
             when (intent.action) {
                 ACTION_START -> {
-                    val url = intent.getStringExtra(EXTRA_URL) ?: "https://ntfy.sh"
+                    val url = intent.getStringExtra(EXTRA_URL) ?: "https://notify.behamad.ir"
                     val topic = intent.getStringExtra(EXTRA_TOPIC) ?: ""
                     val auth = intent.getStringExtra(EXTRA_AUTH)
                     startService(url, topic, auth)
@@ -246,7 +246,7 @@ class NtfyForegroundService : Service() {
         }
 
         return NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
-            .setContentTitle("Ntfy Service")
+            .setContentTitle("سرویس اعلان بهامد")
             .setContentText(text)
             .setSmallIcon(android.R.drawable.ic_dialog_info)
             .setContentIntent(pendingIntent)
